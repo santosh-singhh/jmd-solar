@@ -85,14 +85,24 @@
         .section-header h2 span { color: var(--accent); }
         .section-header p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: auto; }
 
-        /* --- Hero --- */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding-top: 100px; z-index: 2; }
-        .hero-content { max-width: 900px; z-index: 10; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); padding: 8px 20px; border-radius: 50px; font-weight: 500; margin-bottom: 2rem; color: #e2e8f0; }
+        /* --- Hero with Form --- */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; padding-top: 100px; z-index: 2; }
+        .hero-container { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; width: 90%; max-width: 1200px; margin: auto; z-index: 10; }
+        .hero-content { text-align: left; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); padding: 8px 20px; border-radius: 50px; font-weight: 500; margin-bottom: 1.5rem; color: #e2e8f0; }
         .hero-badge i { color: var(--accent); }
-        .hero h1 { font-size: 4rem; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; text-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 3rem; font-weight: 300; }
-        .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .hero h1 { font-size: 3.5rem; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; text-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.15rem; color: #e2e8f0; margin-bottom: 2rem; font-weight: 300; }
+        .hero-btns { display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap; }
+
+        /* Hero Form Panel */
+        .hero-form-panel { background: #fff; padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sleek); border: 1px solid #f1f5f9; }
+        .hero-form-panel h3 { color: var(--dark-bg); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #64748b; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .sleek-input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-family: var(--font-body); font-size: 0.95rem; color: #0f172a; transition: 0.3s; background: #f8fafc; }
+        .sleek-input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
+        select.sleek-input { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em; }
 
         /* --- Content Wrappers --- */
         .content-wrapper { 
@@ -107,6 +117,7 @@
 
         /* --- Grids & Cards --- */
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; max-width: 1200px; margin: auto; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: auto; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: auto; align-items: center; }
         
         .sleek-card { background: #fff; padding: 2.5rem 2rem; border-radius: var(--radius); border: 1px solid #f1f5f9; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center; }
@@ -119,8 +130,26 @@
         .dark-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
         .highlight-number { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; font-family: var(--font-head); }
 
+        /* Make In India Specific Block */
+        .mii-block { background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(251, 191, 36, 0.05)); border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: auto; }
+
+        /* --- Image Fallback Wrapper --- */
+        .img-fallback-wrapper {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sleek);
+            min-height: 400px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        .img-fallback-wrapper i { position: absolute; font-size: 6rem; color: rgba(255,255,255,0.2); z-index: 1; }
+        .img-fallback-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+
         /* --- Portfolio --- */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: auto; }
         .img-card { position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4/3; }
         .img-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .img-card:hover img { transform: scale(1.1); }
@@ -129,23 +158,14 @@
         .img-overlay p { color: var(--accent); font-weight: 500; margin: 0; }
 
         /* --- Banners --- */
-        .price-match-banner { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(251, 191, 36, 0.1)); border: 1px solid var(--accent); border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .price-match-banner { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(251, 191, 36, 0.1)); border: 1px solid var(--accent); border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
         .pm-icon { font-size: 2.5rem; color: var(--accent); }
         .pm-text h4 { color: var(--primary); margin-bottom: 0.25rem; font-size: 1.2rem; font-family: var(--font-head); }
         .pm-text p { color: #64748b; margin: 0; font-size: 0.95rem; line-height: 1.5; }
 
-        /* --- Sleek Form --- */
-        .form-panel { background: #fff; padding: 3rem; border-radius: var(--radius); box-shadow: var(--shadow-sleek); border: 1px solid #f1f5f9; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #64748b; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .sleek-input { width: 100%; padding: 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-family: var(--font-body); font-size: 1rem; color: #0f172a; transition: 0.3s; background: #f8fafc; }
-        .sleek-input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
-        select.sleek-input { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em; }
-
         /* --- Contact Info --- */
-        .contact-info-box { background: var(--dark-bg); color: #fff; padding: 3rem; border-radius: var(--radius); position: relative; overflow: hidden; z-index: 10; }
+        .contact-info-box { background: var(--dark-bg); color: #fff; padding: 3rem; border-radius: var(--radius); position: relative; overflow: hidden; z-index: 10; text-align: center; }
         .contact-info-box h3 { color: #fff; font-size: 2rem; margin-bottom: 1rem; }
-        .contact-info-box p { color: #94a3b8; margin-bottom: 2rem; }
         .info-row { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
         .info-row i { color: var(--accent); font-size: 1.25rem; margin-top: 4px; width: 20px; text-align: center; }
         .info-row strong { display: block; color: #fff; margin-bottom: 0.25rem; }
@@ -163,9 +183,13 @@
 
         /* --- Mobile Responsiveness --- */
         @media (max-width: 900px) {
-            .grid-2 { grid-template-columns: 1fr; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; padding-top: 3rem; gap: 2rem; }
+            .hero-content { text-align: center; }
+            .hero-btns, .hero-content > div:last-child { justify-content: center !important; }
             .hero h1 { font-size: 2.8rem; }
+            .grid-2 { grid-template-columns: 1fr; }
             .bg-slate { margin: 2rem 0; border-radius: 0; padding: 4rem 5%; }
+            .mii-block { grid-template-columns: 1fr; padding: 2rem; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; padding: 2rem 0; flex-direction: column; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
@@ -173,10 +197,9 @@
             .nav-links li a { color: var(--dark-bg) !important; font-size: 1.1rem; }
             .hamburger { display: block; }
             .hero h1 { font-size: 2.2rem; }
-            .hero-btns { flex-direction: column; width: 100%; padding: 0 20px; }
+            .hero-btns { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
             section { padding: 4rem 5%; }
-            .form-panel, .contact-info-box { padding: 2rem; }
             .price-match-banner { flex-direction: column; text-align: center; }
             .value-panel { padding: 2rem !important; }
         }
@@ -191,7 +214,7 @@
             <a href="#" class="logo">JMD Solar<span> Power</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Solutions</a></li>
                 <li><a href="#savings">Savings</a></li>
                 <li><a href="#contact" class="btn btn-primary" style="padding: 10px 20px; color: #000;">Get Quote</a></li>
             </ul>
@@ -199,34 +222,67 @@
         </div>
     </nav>
 
-    <a href="https://wa.me/918851142922" class="float-wa bounce-infinite" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/919599679977" class="float-wa bounce-infinite" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge b-up">
-                <i class="fas fa-tools"></i> Free Maintenance Guarantee
-            </div>
-            <h1 class="b-up">Switch to Solar. <br>Let the sun pay your bills.</h1>
-            <p class="b-up">Premium Make in India solar installations for homes, housing societies, and businesses. Start saving on your electricity bills from day one.</p>
-            <div class="hero-btns b-up">
-                <a href="#contact" class="btn btn-primary"><i class="fas fa-sun"></i> Get a Free Quote</a>
-                <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" class="btn btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.2);"><i class="fab fa-google"></i> Verified Profile</a>
-            </div>
-            
-            <div class="b-up" style="margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 0.95rem; color: #cbd5e1; font-weight: 500; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="display: flex; color: var(--accent); font-size: 1.1rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" style="text-decoration: underline; color: #fff; transition: 0.3s;">Verified on Google</a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge b-up">
+                    <i class="fas fa-tools"></i> Free Maintenance Guarantee
                 </div>
-                <div style="display: flex; align-items: center; gap: 8px; color: var(--accent);">
-                    <i class="fas fa-shield-alt"></i> <span style="color: #fff;">100% Price Match Guaranteed</span>
+                <h1 class="b-up">Switch to Solar. <br>Let the sun pay your bills.</h1>
+                <p class="b-up">Premium Make in India solar installations for homes, commercial, and industrial sites. Start saving on your electricity bills from day one.</p>
+                <div class="hero-btns b-up">
+                    <a href="https://wa.me/919599679977" target="_blank" class="btn btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.2);"><i class="fab fa-whatsapp"></i> Chat with Expert</a>
                 </div>
+                
+                <div class="b-up" style="margin-top: 2rem; display: flex; align-items: center; justify-content: flex-start; gap: 20px; font-size: 0.95rem; color: #cbd5e1; font-weight: 500; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="display: flex; color: var(--accent); font-size: 1.1rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" style="text-decoration: underline; color: #fff; transition: 0.3s;">Verified on Google</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-form-panel b-up">
+                <h3>Get Your Free Quote</h3>
+                <form id="wa-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="waName" class="sleek-input" placeholder="e.g. Rahul Sharma">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone / WhatsApp</label>
+                        <input type="tel" id="waPhone" class="sleek-input" placeholder="+91">
+                    </div>
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select id="waType" class="sleek-input">
+                            <option value="" disabled selected>Select property type...</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Industrial">Industrial</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>City / Pincode</label>
+                        <input type="text" id="waLocation" class="sleek-input" placeholder="e.g. Noida">
+                    </div>
+                    <div class="form-group">
+                        <label>Requirements (Optional)</label>
+                        <textarea id="waMessage" class="sleek-input" rows="2" placeholder="Average bill, roof space, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 5px; padding: 14px;">
+                        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Send Details via WhatsApp
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <div class="container" style="position: relative; z-index: 20; max-width: 1200px; margin: auto; padding: 0 5%;">
-        <div class="value-panel b-up" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border: 4px solid #fff; border-radius: 24px; padding: 3rem; text-align: center; margin-top: -5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(16, 185, 129, 0.4);">
+        <div class="value-panel b-up" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border: 4px solid #fff; border-radius: 24px; padding: 3rem; text-align: center; margin-top: -3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(16, 185, 129, 0.4);">
             <h2 style="color: #fff; font-size: 2.2rem; margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">25-Year Performance Warranty</h2>
             <p style="color: var(--accent); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; justify-content: center; align-items: center; gap: 10px;"><i class="fas fa-certificate"></i> Engineered to last decades.</p>
             <div style="color: #f8fafc; font-size: 1.1rem; line-height: 1.6; font-weight: 500;">We stand by our Make in India products. Enjoy decades of clean, uninterrupted energy with comprehensive warranty coverage and our <strong>Free Maintenance Guarantee</strong> to keep your panels at peak efficiency.</div>
@@ -240,26 +296,27 @@
                 <h2>Our <span>Solutions</span></h2>
                 <p>We provide end-to-end solar infrastructure for every type of property.</p>
             </div>
+            
             <div class="grid-4">
                 <div class="sleek-card b-card">
                     <div class="icon-box"><i class="fas fa-home"></i></div>
-                    <h3>Home Solar</h3>
-                    <p style="font-size: 0.95rem;">Reduce electricity bills by up to 90%. Safe, highly efficient rooftop systems.</p>
+                    <h3>Residential</h3>
+                    <p style="font-size: 0.95rem;">Reduce electricity bills by up to 90%. Safe, highly efficient rooftop systems for homes.</p>
                 </div>
                 <div class="sleek-card b-card">
                     <div class="icon-box"><i class="fas fa-building"></i></div>
-                    <h3>Housing Societies</h3>
-                    <p style="font-size: 0.95rem;">Power common areas, lifts, and pumps. Massive collective savings.</p>
+                    <h3>Commercial</h3>
+                    <p style="font-size: 0.95rem;">Boost your bottom line. Scalable setups for retail, offices, and commercial buildings.</p>
                 </div>
                 <div class="sleek-card b-card">
                     <div class="icon-box"><i class="fas fa-industry"></i></div>
-                    <h3>Commercial</h3>
-                    <p style="font-size: 0.95rem;">Boost your bottom line. Scalable setups for factories, retail, and offices.</p>
+                    <h3>Industrial</h3>
+                    <p style="font-size: 0.95rem;">Heavy-duty power generation for factories and large-scale manufacturing plants.</p>
                 </div>
-                <div class="sleek-card b-card">
-                    <div class="icon-box"><i class="fas fa-tools"></i></div>
-                    <h3>O&M Services</h3>
-                    <p style="font-size: 0.95rem;">Full-service Operations & Maintenance to ensure peak energy generation.</p>
+                <div class="sleek-card b-card" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.03);">
+                    <div class="icon-box"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Solar EPC Solutions</h3>
+                    <p style="font-size: 0.95rem;"><strong>Design, Supply & Maintenance.</strong> Comprehensive end-to-end turnkey execution.</p>
                 </div>
             </div>
         </section>
@@ -280,26 +337,28 @@
                 
                 <div class="dark-card b-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Commercial ROI</h3>
+                    <h3>Commercial & Industrial ROI</h3>
                     <div class="highlight-number">~ 2 to 3 Years</div>
                     <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">Businesses recover their costs incredibly fast—often in just 2 to 3 years. By utilizing <strong>Accelerated Depreciation (AD) tax benefits</strong> and eliminating massive operational power costs, solar directly boosts your bottom line.</p>
                 </div>
             </div>
         </section>
 
-        <section id="about">
-            <div class="grid-2">
-                <div class="b-up">
+        <section id="about" style="padding-top: 4rem;">
+            <div class="mii-block b-up">
+                <div>
                     <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;">Proudly Supporting <br><span>Make in India</span></h2>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem;">At JMD Solar Power Solution, we believe in national growth alongside environmental sustainability. That is why we utilize high-quality, domestically manufactured solar panels and inverters.</p>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; gap: 15px; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem;"></i> <strong style="color: var(--dark-bg);">Free Maintenance Guarantee</strong></div>
+                        <div style="display: flex; gap: 15px; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem;"></i> <strong style="color: var(--dark-bg);">Free Maintenance Guarantee Included</strong></div>
                         <div style="display: flex; gap: 15px; align-items: center;"><i class="fas fa-shield-alt" style="color: var(--primary); font-size: 1.5rem;"></i> <strong style="color: var(--dark-bg);">100% Price Match Guarantee</strong></div>
                         <div style="display: flex; gap: 15px; align-items: center;"><i class="fas fa-map-marker-alt" style="color: var(--primary); font-size: 1.5rem;"></i> <strong style="color: var(--dark-bg);">Pan India Installation</strong></div>
                     </div>
                 </div>
-                <div class="img-card b-up">
-                    <img src="https://images.unsplash.com/photo-1588508065123-287b28e0131b?auto=format&fit=crop&w=800&q=80" alt="Make in India Solar Panels">
+                
+                <div class="img-fallback-wrapper">
+                    <i class="fas fa-solar-panel"></i>
+                    <img src="https://images.unsplash.com/photo-1588508065123-287b28e0131b?auto=format&fit=crop&w=800&q=80" alt="Make in India Solar Panels" onerror="this.style.display='none'">
                 </div>
             </div>
         </section>
@@ -311,114 +370,104 @@
             </div>
             <div class="grid-3">
                 <div class="img-card b-card">
-                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=600&q=80" alt="Residential Solar">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=600&q=80" alt="Residential Solar" onerror="this.style.display='none'">
                     <div class="img-overlay">
                         <h4>Residential Rooftop</h4>
                         <p>5kW Setup</p>
                     </div>
                 </div>
                 <div class="img-card b-card">
-                    <img src="https://images.unsplash.com/photo-1592833159057-6fc15649f826?auto=format&fit=crop&w=600&q=80" alt="Commercial Solar">
+                    <img src="https://images.unsplash.com/photo-1592833159057-6fc15649f826?auto=format&fit=crop&w=600&q=80" alt="Commercial Solar" onerror="this.style.display='none'">
                     <div class="img-overlay">
                         <h4>Factory Installation</h4>
                         <p>50kW Commercial Setup</p>
                     </div>
                 </div>
                 <div class="img-card b-card">
-                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80" alt="Housing Society">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80" alt="Industrial Solar" onerror="this.style.display='none'">
                     <div class="img-overlay">
-                        <h4>Housing Society</h4>
-                        <p>25kW Common Area Power</p>
+                        <h4>Industrial Plant</h4>
+                        <p>150kW Heavy Duty Power</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="testimonials" style="padding-top: 2rem; padding-bottom: 5rem;">
             <div class="section-header b-up">
-                <h2>Get Your <span>Free Quote</span></h2>
-                <p>No commitments. Just fill in whatever details you have, and our experts will reach out to you via WhatsApp.</p>
+                <h2>Client <span>Testimonials</span></h2>
+                <p>Hear from our satisfied customers across India.</p>
+            </div>
+            <div class="grid-3">
+                <div class="sleek-card b-card" style="text-align: left;">
+                    <div style="color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size: 0.95rem; font-style: italic; margin-bottom: 1.5rem; color: #475569;">"I was looking for a reliable solar partner for my home in Jaipur. JMD Solar provided top-notch Make in India panels. My electricity bill is almost zero now. Highly recommended!"</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Amit Rathore</h4>
+                    <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Rajasthan</p>
+                </div>
+                <div class="sleek-card b-card" style="text-align: left; border-color: var(--primary); background: rgba(16, 185, 129, 0.02);">
+                    <div style="color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size: 0.95rem; font-style: italic; margin-bottom: 1.5rem; color: #475569;">"For our commercial factory, we needed a robust system. The JMD team delivered a perfect 50kW installation. The 25-year warranty and their maintenance guarantee give us total peace of mind."</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Darbar Singh Chadda</h4>
+                    <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Delhi</p>
+                </div>
+                <div class="sleek-card b-card" style="text-align: left;">
+                    <div style="color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size: 0.95rem; font-style: italic; margin-bottom: 1.5rem; color: #475569;">"Very professional team. They handled everything from site inspection to installation seamlessly. The price match guarantee was real—they gave the absolute best quote in the market."</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Sneha Reddy</h4>
+                    <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Bangalore</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="padding-bottom: 8rem; padding-top: 0;">
+            <div class="section-header b-up">
+                <h2>Contact <span>Us</span></h2>
+                <p>Reach out to us directly. We provide fast assessments across India.</p>
             </div>
             
-            <div class="grid-2">
-                <div class="form-container">
-                    
-                    <div class="price-match-banner b-up">
-                        <div class="pm-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div class="pm-text">
-                            <h4>100% Price Match Guarantee</h4>
-                            <p>Find a lower quote for the exact same quality and Make in India specifications? Show us, and <strong>we will match it.</strong></p>
-                        </div>
-                    </div>
-
-                    <div class="form-panel b-up">
-                        <form id="wa-form">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" id="waName" class="sleek-input" placeholder="e.g. Rahul Sharma">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone / WhatsApp</label>
-                                <input type="tel" id="waPhone" class="sleek-input" placeholder="+91">
-                            </div>
-                            <div class="form-group">
-                                <label>Property Type</label>
-                                <select id="waType" class="sleek-input">
-                                    <option value="" disabled selected>Select property type...</option>
-                                    <option value="Residential Home">Residential Home</option>
-                                    <option value="Housing Society">Housing Society</option>
-                                    <option value="Commercial/Business">Commercial / Business</option>
-                                    <option value="Industrial">Industrial</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>City / Pincode</label>
-                                <input type="text" id="waLocation" class="sleek-input" placeholder="e.g. Noida">
-                            </div>
-                            <div class="form-group">
-                                <label>Any Specific Requirements? (Optional)</label>
-                                <textarea id="waMessage" class="sleek-input" rows="3" placeholder="Average bill, roof space available, etc."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; padding: 16px;">
-                                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Send Details via WhatsApp
-                            </button>
-                        </form>
+            <div style="max-width: 800px; margin: auto;">
+                <div class="price-match-banner b-up" style="justify-content: center;">
+                    <div class="pm-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="pm-text">
+                        <h4>100% Price Match Guarantee</h4>
+                        <p>Find a lower quote for the exact same quality and Make in India specifications? Show us, and <strong>we will match it.</strong></p>
                     </div>
                 </div>
 
-                <div class="contact-info-box b-up">
+                <div class="contact-info-box b-up" style="text-align: center;">
                     <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(251, 191, 36, 0.1); border-radius: 50%;"></div>
                     
-                    <h3>Ready to go solar?</h3>
-                    <p>Skip the form and reach out to us directly. We provide fast assessments across India.</p>
+                    <h3 style="margin-bottom: 2rem;">Ready to go solar?</h3>
                     
-                    <div class="info-row" style="margin-top: 2rem;">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <strong>WhatsApp & Call</strong>
-                            <a href="https://wa.me/918851142922" target="_blank" style="color: var(--accent); font-weight: 600; font-size: 1.2rem;">+91 88511 42922</a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                        <div class="info-row" style="margin-bottom: 0;">
+                            <i class="fab fa-whatsapp"></i>
+                            <div style="text-align: left;">
+                                <strong>WhatsApp & Call</strong>
+                                <a href="https://wa.me/919599679977" target="_blank" style="color: var(--accent); font-weight: 600; font-size: 1.2rem;">+91 95996 79977</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email Address</strong>
-                            <a href="mailto:shift.digital.ss@gmail.com" style="color: #e2e8f0;">shift.digital.ss@gmail.com</a>
+                        <div class="info-row" style="margin-bottom: 0;">
+                            <i class="fas fa-envelope"></i>
+                            <div style="text-align: left;">
+                                <strong>Email Address</strong>
+                                <a href="mailto:shift.digital.ss@gmail.com" style="color: #e2e8f0;">shift.digital.ss@gmail.com</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Head Office</strong>
-                            <span style="font-size: 0.95rem; color: #cbd5e1; display: block; margin-top: 5px; line-height: 1.5;">Green Valley Colony, Sector 144,<br>Noida, Uttar Pradesh 201306</span>
+                        <div class="info-row" style="margin-bottom: 0;">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div style="text-align: left;">
+                                <strong>Head Office</strong>
+                                <span style="font-size: 0.95rem; color: #cbd5e1; display: block; margin-top: 5px; line-height: 1.5;">Green Valley Colony, Sector 144,<br>Noida, Uttar Pradesh 201306</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fab fa-google"></i>
-                        <div>
-                            <strong>Google Business Profile</strong>
-                            <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" style="color: var(--accent); font-weight: 500; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 5px;">View Profile & Reviews <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a>
+                        <div class="info-row">
+                            <i class="fab fa-google"></i>
+                            <div style="text-align: left;">
+                                <strong>Google Business Profile</strong>
+                                <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" style="color: var(--accent); font-weight: 500; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 5px;">View Profile & Reviews <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -430,7 +479,7 @@
             <p>Reliable solar power installations for homes and businesses. Embrace clean energy today.</p>
             
             <div style="display: flex; gap: 20px; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
-                <a href="https://wa.me/918851142922" style="color: var(--accent);"><i class="fab fa-whatsapp"></i> +91 88511 42922</a>
+                <a href="https://wa.me/919599679977" style="color: var(--accent);"><i class="fab fa-whatsapp"></i> +91 95996 79977</a>
                 <a href="mailto:shift.digital.ss@gmail.com" style="color: var(--accent);"><i class="fas fa-envelope"></i> Email Us</a>
                 <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" style="color: var(--accent);"><i class="fab fa-google"></i> Google Profile</a>
             </div>
@@ -471,7 +520,7 @@
             const location = document.getElementById('waLocation').value.trim() || "Not provided";
             const message = document.getElementById('waMessage').value.trim() || "No additional requirements.";
             
-            const waNumber = "918851142922";
+            const waNumber = "919599679977";
             const waMessage = `Hello JMD Solar, I would like to get a quote. Here are my details:%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Property Type:* ${type}%0A*City/Pincode:* ${location}%0A*Extra Details:* ${message}`;
             
             window.open(`https://wa.me/${waNumber}?text=${waMessage}`, '_blank');
@@ -479,19 +528,25 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
+        // Fixed animation issue with gsap.fromTo
         gsap.utils.toArray('.b-up').forEach(elem => {
-            gsap.from(elem, {
-                scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none none" },
-                y: 60, opacity: 0, duration: 1.2, ease: "bounce.out"
-            });
+            gsap.fromTo(elem, 
+                { y: 60, opacity: 0 },
+                { scrollTrigger: { trigger: elem, start: "top 90%", toggleActions: "play none none none" }, y: 0, opacity: 1, duration: 1.2, ease: "bounce.out" }
+            );
         });
 
-        // Target the 4 cards and stagger them
-        gsap.utils.toArray('.grid-4, .grid-3').forEach(grid => {
-            gsap.from(grid.querySelectorAll('.b-card'), {
-                scrollTrigger: { trigger: grid, start: "top 80%" },
-                y: 50, opacity: 0, duration: 1, ease: "back.out(1.7)", stagger: 0.2
-            });
+        // Fixed grid animation issue with gsap.fromTo
+        gsap.utils.toArray('.grid-4, .grid-3, .grid-2').forEach(grid => {
+            gsap.fromTo(grid.querySelectorAll('.b-card'), 
+                { y: 50, opacity: 0 },
+                { scrollTrigger: { trigger: grid, start: "top 85%" }, y: 0, opacity: 1, duration: 1, ease: "back.out(1.7)", stagger: 0.2 }
+            );
+        });
+
+        // Ensure animations recalculate properly after images attempt to load
+        window.addEventListener('load', () => {
+            setTimeout(() => { ScrollTrigger.refresh(); }, 500);
         });
 
         gsap.to('.bounce-infinite', { y: -10, duration: 1.5, repeat: -1, yoyo: true, ease: "power1.inOut" });

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Insights & News | JMD Solar Power</title>
+    <meta name="description" content="Read the latest news, tips, and insights about solar energy, subsidies, and installation in India from JMD Solar Power Solutions.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --primary: #10b981; --primary-dark: #047857; --accent: #fbbf24; --dark-bg: #0f172a; --text-main: #334155; --font-head: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif; --radius: 24px; --shadow-sleek: 0 20px 40px -10px rgba(0,0,0,0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-main); background-color: #f8fafc; }
+        h1, h2, h3 { font-family: var(--font-head); color: var(--dark-bg); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        img { max-width: 100%; }
+
+        /* Navbar */
+        nav { background: var(--dark-bg); padding: 15px 0; width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1200px; margin: auto; }
+        .logo-img { height: 40px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links a { color: #fff; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--accent); }
+        .btn-primary { background: var(--accent); color: #000 !important; padding: 10px 20px; border-radius: 50px; font-weight: 600; }
+
+        /* Header */
+        .blog-header { text-align: center; padding: 6rem 5% 4rem; background: #fff; margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; }
+        .blog-header h1 { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+        .blog-header p { font-size: 1.1rem; color: #64748b; max-width: 600px; margin: auto; }
+
+        /* Grid */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; width: 90%; max-width: 1200px; margin: 0 auto 6rem; }
+        
+        /* Blog Cards */
+        .blog-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sleek); border: 1px solid #f1f5f9; transition: 0.3s; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -15px rgba(0,0,0,0.15); border-color: var(--primary); }
+        .blog-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #f1f5f9; }
+        .blog-content { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .blog-date { font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .blog-title { font-size: 1.3rem; margin-bottom: 1rem; line-height: 1.4; color: var(--dark-bg); }
+        .blog-excerpt { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; flex-grow: 1; }
+        .read-more { font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 5px; }
+        .read-more:hover { color: var(--primary-dark); }
+
+        /* Floating WA */
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); z-index: 99; transition: 0.3s; }
+        .float-wa:hover { transform: scale(1.1); }
+
+        /* Footer */
+        footer { background: var(--dark-bg); color: #cbd5e1; padding: 4rem 5% 2rem; text-align: center; }
+        .footer-logo-img { height: 60px; margin-bottom: 1.5rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .blog-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="https://i.postimg.cc/Ty6qbWTF/logo.png" alt="JMD Solar Logo" class="logo-img" onerror="this.src='https://i.postimg.cc/Ty6qbWTF/logo.jpg';"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://wa.me/919599679977" class="btn-primary" target="_blank">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <a href="https://wa.me/919599679977" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <header class="blog-header">
+        <h1>Solar Insights & News</h1>
+        <p>Expert advice, industry news, and tips to help you maximize your savings with Make in India solar power.</p>
+    </header>
+
+    <main class="grid-3">
+        <article class="blog-card">
+            <a href="blog/is-solar-worth-it-2026.html">
+                <img src="https://i.postimg.cc/yWH4NfqF/JMD-SOLAR-POWER-SOLUTIONS-1-jpg.jpg" alt="Solar Worth It 2026" class="blog-img">
+            </a>
+            <div class="blog-content">
+                <span class="blog-date">March 15, 2026</span>
+                <a href="blog/is-solar-worth-it-2026.html"><h2 class="blog-title">Is Solar Power the Smartest Investment in India for 2026?</h2></a>
+                <p class="blog-excerpt">Discover the new PM Surya Ghar subsidies, how to recover your costs in 3 years, and why Noida is leading the charge...</p>
+                <a href="blog/is-solar-worth-it-2026.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <a href="#">
+                <img src="https://i.postimg.cc/mhsfrdxS/Noida-sites-(5).jpg" alt="Solar Post" class="blog-img">
+            </a>
+            <div class="blog-content">
+                <span class="blog-date">Coming Soon</span>
+                <h2 class="blog-title">Complete Guide to Solar Subsidies in Noida & UP (2026)</h2>
+                <p class="blog-excerpt">Learn exactly how to claim up to ₹78,000 in government benefits for your rooftop solar installation...</p>
+                <a href="#" class="read-more" style="color: #cbd5e1;">Available Soon</a>
+            </div>
+        </article>
+        
+        <article class="blog-card">
+            <a href="#">
+                <img src="https://i.postimg.cc/JtLVhTwq/Noida-sites-(4).jpg" alt="Commercial Solar" class="blog-img">
+            </a>
+            <div class="blog-content">
+                <span class="blog-date">Coming Soon</span>
+                <h2 class="blog-title">Commercial Solar: How Factories Are Slashing Operational Costs</h2>
+                <p class="blog-excerpt">Explore the ROI and Accelerated Depreciation (AD) tax benefits for commercial and industrial solar setups...</p>
+                <a href="#" class="read-more" style="color: #cbd5e1;">Available Soon</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <img src="https://i.postimg.cc/Ty6qbWTF/logo.png" alt="JMD Solar Logo" class="footer-logo-img" onerror="this.src='https://i.postimg.cc/Ty6qbWTF/logo.jpg';">
+        <p>&copy; 2026 JMD Solar Power Solution. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

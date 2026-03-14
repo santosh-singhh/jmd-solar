@@ -65,17 +65,21 @@
         .btn-secondary:hover { transform: translateY(-3px) scale(1.02); background: var(--primary-dark); }
 
         /* --- Navigation --- */
-        nav { position: fixed; width: 100%; top: 0; z-index: 1000; padding: 20px 0; transition: 0.3s; }
+        nav { position: fixed; width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: 0.3s; }
         nav.scrolled { padding: 10px 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1200px; margin: auto; }
-        .logo { font-size: 1.5rem; font-family: var(--font-head); font-weight: 800; color: var(--primary); }
-        .logo span { color: var(--accent); }
-        nav.scrolled .logo, nav.scrolled .nav-links li a { color: var(--dark-bg); }
-        nav:not(.scrolled) .logo, nav:not(.scrolled) .nav-links li a { color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        nav.scrolled .hamburger { color: var(--dark-bg); }
+        
+        /* Updated Logo Class for Image */
+        .logo-img { height: 45px; width: auto; transition: 0.3s; }
+        nav.scrolled .logo-img { height: 40px; }
         
         .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
         .nav-links li a { font-weight: 500; font-size: 0.95rem; }
+        
+        nav.scrolled .nav-links li a { color: var(--dark-bg); }
+        nav:not(.scrolled) .nav-links li a { color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        nav.scrolled .hamburger { color: var(--dark-bg); }
+        
         .hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; }
 
         /* --- Sections --- */
@@ -176,8 +180,7 @@
 
         /* --- Footer --- */
         footer { background: var(--dark-bg); color: #cbd5e1; padding: 4rem 5% 2rem; text-align: center; position: relative; z-index: 10; }
-        .footer-logo { font-size: 2rem; color: var(--primary); font-family: var(--font-head); font-weight: 800; margin-bottom: 1rem; }
-        .footer-logo span { color: var(--accent); }
+        .footer-logo-img { height: 60px; width: auto; margin-bottom: 1.5rem; opacity: 0.9; }
         .footer-cities { font-size: 0.85rem; max-width: 800px; margin: 2rem auto; line-height: 1.8; color: #94a3b8;}
         .footer-cities strong { color: #fff; }
 
@@ -211,7 +214,9 @@
 
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">JMD Solar<span> Power</span></a>
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/DwyFnsC9/Gemini-Generated-Image-hzqedxhzqedxhzqe.png" alt="JMD Solar Logo" class="logo-img">
+            </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Solutions</a></li>
@@ -358,7 +363,7 @@
                 
                 <div class="img-fallback-wrapper">
                     <i class="fas fa-solar-panel"></i>
-                    <img src="https://images.unsplash.com/photo-1588508065123-287b28e0131b?auto=format&fit=crop&w=800&q=80" alt="Make in India Solar Panels" onerror="this.style.display='none'">
+                    <img src="https://i.postimg.cc/yWH4NfqF/JMD-SOLAR-POWER-SOLUTIONS-(1)-jpg.jpg" alt="Make in India Solar Panels" onerror="this.style.display='none'">
                 </div>
             </div>
         </section>
@@ -370,24 +375,24 @@
             </div>
             <div class="grid-3">
                 <div class="img-card b-card">
-                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=600&q=80" alt="Residential Solar" onerror="this.style.display='none'">
+                    <img src="https://i.postimg.cc/mhsfrdxS/Noida-sites-(5).jpg" alt="Residential Solar" onerror="this.style.display='none'">
                     <div class="img-overlay">
                         <h4>Residential Rooftop</h4>
-                        <p>5kW Setup</p>
+                        <p>High Efficiency Setup</p>
                     </div>
                 </div>
                 <div class="img-card b-card">
-                    <img src="https://images.unsplash.com/photo-1592833159057-6fc15649f826?auto=format&fit=crop&w=600&q=80" alt="Commercial Solar" onerror="this.style.display='none'">
+                    <img src="https://i.postimg.cc/JtLVhTwq/Noida-sites-(4).jpg" alt="Commercial Solar" onerror="this.style.display='none'">
                     <div class="img-overlay">
-                        <h4>Factory Installation</h4>
-                        <p>50kW Commercial Setup</p>
+                        <h4>Commercial Installation</h4>
+                        <p>Rooftop Power Generation</p>
                     </div>
                 </div>
                 <div class="img-card b-card">
-                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80" alt="Industrial Solar" onerror="this.style.display='none'">
+                    <img src="https://i.postimg.cc/30BZrrMd/JMD-SOLAR-POWER-SOLUTIONS-(5)-jpg.jpg" alt="Industrial Solar" onerror="this.style.display='none'">
                     <div class="img-overlay">
                         <h4>Industrial Plant</h4>
-                        <p>150kW Heavy Duty Power</p>
+                        <p>Heavy Duty Solar Array</p>
                     </div>
                 </div>
             </div>
@@ -452,7 +457,7 @@
                             <i class="fas fa-envelope"></i>
                             <div style="text-align: left;">
                                 <strong>Email Address</strong>
-                                <a href="mailto:shift.digital.ss@gmail.com" style="color: #e2e8f0;">shift.digital.ss@gmail.com</a>
+                                <a href="mailto:sales.jmdpower@gmail.com" style="color: #e2e8f0;">sales.jmdpower@gmail.com</a>
                             </div>
                         </div>
                         <div class="info-row" style="margin-bottom: 0;">
@@ -475,12 +480,12 @@
         </section>
 
         <footer>
-            <div class="footer-logo">JMD Solar<span> Power</span></div>
+            <img src="https://i.postimg.cc/DwyFnsC9/Gemini-Generated-Image-hzqedxhzqedxhzqe.png" alt="JMD Solar Logo" class="footer-logo-img">
             <p>Reliable solar power installations for homes and businesses. Embrace clean energy today.</p>
             
             <div style="display: flex; gap: 20px; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
                 <a href="https://wa.me/919599679977" style="color: var(--accent);"><i class="fab fa-whatsapp"></i> +91 95996 79977</a>
-                <a href="mailto:shift.digital.ss@gmail.com" style="color: var(--accent);"><i class="fas fa-envelope"></i> Email Us</a>
+                <a href="mailto:sales.jmdpower@gmail.com" style="color: var(--accent);"><i class="fas fa-envelope"></i> Email Us</a>
                 <a href="https://share.google/d4slnjtVZR0f7ao7C" target="_blank" style="color: var(--accent);"><i class="fab fa-google"></i> Google Profile</a>
             </div>
 
@@ -528,7 +533,6 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        // Fixed animation issue with gsap.fromTo
         gsap.utils.toArray('.b-up').forEach(elem => {
             gsap.fromTo(elem, 
                 { y: 60, opacity: 0 },
@@ -536,7 +540,6 @@
             );
         });
 
-        // Fixed grid animation issue with gsap.fromTo
         gsap.utils.toArray('.grid-4, .grid-3, .grid-2').forEach(grid => {
             gsap.fromTo(grid.querySelectorAll('.b-card'), 
                 { y: 50, opacity: 0 },
@@ -544,7 +547,6 @@
             );
         });
 
-        // Ensure animations recalculate properly after images attempt to load
         window.addEventListener('load', () => {
             setTimeout(() => { ScrollTrigger.refresh(); }, 500);
         });

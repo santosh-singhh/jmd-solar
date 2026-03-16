@@ -329,9 +329,10 @@
                     <div class="blog-preview-content">
                         <span style="color:var(--primary); font-weight:700; font-size:0.75rem;">Subsidies</span>
                         <h3 style="font-size:1.2rem; margin:0.5rem 0;">Guide to Solar Subsidies in Noida & UP</h3>
-                        <a href="blog.html" style="color: var(--primary); font-weight: 700;">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog/solar-subsidy-noida-up-2026.html" style="color: var(--primary); font-weight: 700;">Read Full Guide <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+                
                 <article class="blog-preview-card b-card" style="display: flex; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.05); border: 2px dashed #e2e8f0;">
                     <div class="blog-preview-content" style="text-align: center;">
                         <i class="fas fa-book-open" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
@@ -408,24 +409,4 @@
 
         gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray('.b-up').forEach(elem => { gsap.fromTo(elem, { y: 60, opacity: 0 }, { scrollTrigger: { trigger: elem, start: "top 90%", toggleActions: "play none none none" }, y: 0, opacity: 1, duration: 1.2, ease: "bounce.out" }); });
-        gsap.utils.toArray('.grid-4, .grid-3, .grid-2').forEach(grid => { gsap.fromTo(grid.querySelectorAll('.b-card'), { y: 50, opacity: 0 }, { scrollTrigger: { trigger: grid, start: "top 85%" }, y: 0, opacity: 1, duration: 1, ease: "back.out(1.7)", stagger: 0.2 }); });
-        gsap.to('.bounce-infinite', { y: -10, duration: 1.5, repeat: -1, yoyo: true, ease: "power1.inOut" });
-
-        // 3D Background
-        const canvas = document.getElementById('canvas-bg');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        const geometry = new THREE.TorusGeometry(12, 4, 16, 100);
-        const material = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.15 });
-        const torus = new THREE.Mesh(geometry, material);
-        scene.add(torus);
-        camera.position.z = 30;
-        let mouseX = 0; let mouseY = 0;
-        document.addEventListener('mousemove', (e) => { mouseX = (e.clientX - window.innerWidth / 2) * 0.001; mouseY = (e.clientY - window.innerHeight / 2) * 0.001; });
-        const animate = () => { requestAnimationFrame(animate); torus.rotation.x += 0.005; torus.rotation.y += 0.002; torus.rotation.y += (mouseX - torus.rotation.y) * 0.05; torus.rotation.x += (mouseY - torus.rotation.x) * 0.05; renderer.render(scene, camera); };
-        animate();
-    </script>
-</body>
-</html>
+        gsap.utils.toArray('.grid-4, .grid-3, .grid-2').forEach(grid => { gsap.fromTo(grid.querySelectorAll('.b-card'), {

@@ -20,28 +20,50 @@
         .header { text-align: center; padding: 5rem 5%; background: #fff; border-bottom: 1px solid #e2e8f0; margin-bottom: 3rem; }
         .header h1 { font-family: var(--font-head); font-size: 2.5rem; color: var(--primary); }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 5rem; padding: 0 5%; }
-        .card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-bottom: 3px solid var(--primary); }
         .card img { width: 100%; height: 220px; object-fit: cover; }
         .card-content { padding: 1.5rem; }
-        .card-content h2 { font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 1rem; color: var(--dark-bg); }
+        .card-content h2 { font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 1rem; color: var(--dark-bg); line-height: 1.4;}
         footer { background: var(--dark-bg); padding: 3rem 0; text-align: center; color: #fff; }
     </style>
 </head>
 <body>
-    <nav><div class="nav-container"><a href="index.html"><img src="https://i.postimg.cc/Ty6qbWTF/logo.png" class="logo-img"></a>
-        <div class="nav-links"><a href="index.html">Home</a><a href="https://wa.me/919599679977" class="btn-primary">Get Quote</a></div></div>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="https://i.postimg.cc/Ty6qbWTF/logo.png" class="logo-img"></a>
+            <div class="nav-links"><a href="index.html">Home</a><a href="https://wa.me/919599679977" class="btn-primary" target="_blank">Get Quote</a></div>
+        </div>
     </nav>
-    <div class="header"><h1>Solar Insights</h1><p>Expert news on Make in India solar installations.</p></div>
+    
+    <div class="header">
+        <h1>Solar Insights</h1>
+        <p>Expert news, ROI calculations, and guides on Make in India solar installations.</p>
+    </div>
+    
     <div class="grid-3">
         <div class="card">
-            <a href="blog/is-solar-worth-it-2026.html"><img src="https://images.unsplash.com/photo-1509391366360-1f95091bd50a?q=80&w=1200&auto=format&fit=crop"></a>
+            <a href="blog/is-solar-worth-it-2026.html"><img src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=1200&auto=format&fit=crop"></a>
             <div class="card-content">
                 <span style="color:var(--primary); font-weight:700; font-size:0.8rem;">March 15, 2026</span>
                 <a href="blog/is-solar-worth-it-2026.html"><h2>Is Solar Power Worth the Investment in India (2026)?</h2></a>
-                <a href="blog/is-solar-worth-it-2026.html" style="color:var(--primary); font-weight:700;">Read Guide →</a>
+                <a href="blog/is-solar-worth-it-2026.html" style="color:var(--primary); font-weight:700;">Read Full Guide →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="blog/solar-subsidy-noida-up-2026.html"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1200&auto=format&fit=crop"></a>
+            <div class="card-content">
+                <span style="color:var(--primary); font-weight:700; font-size:0.8rem;">March 16, 2026</span>
+                <a href="blog/solar-subsidy-noida-up-2026.html"><h2>Guide to Solar Subsidies in Noida & UP (Claim ₹1,08,000)</h2></a>
+                <a href="blog/solar-subsidy-noida-up-2026.html" style="color:var(--primary); font-weight:700;">Read Full Guide →</a>
             </div>
         </div>
     </div>
-    <footer><img src="https://i.postimg.cc/Ty6qbWTF/logo.png" style="height:40px; margin-bottom:1rem;"><p>&copy; 2026 JMD Solar Power</p></footer>
+
+    <footer>
+        <img src="https://i.postimg.cc/Ty6qbWTF/logo.png" style="height:40px; margin-bottom:1rem;">
+        <p>&copy; 2026 JMD Solar Power</p>
+    </footer>
 </body>
 </html>

@@ -6,14 +6,16 @@
     <title>JMD Solar Power Solution | Premium Make in India Solar in Noida</title>
     <meta name="description" content="Reliable solar power installation in Noida & NCR. Save 90% on bills with JMD Solar. Expert EPC services for home, commercial, and industrial sites.">
     
+    <link rel="canonical" href="https://www.jmdsolarpower.com/" />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "JMD Solar Power Solution",
       "image": "https://i.postimg.cc/Ty6qbWTF/logo.png",
-      "@id": "https://jmdsolarpower.com",
-      "url": "https://jmdsolarpower.com",
+      "@id": "https://www.jmdsolarpower.com",
+      "url": "https://www.jmdsolarpower.com",
       "telephone": "+919599679977",
       "address": {
         "@type": "PostalAddress",
@@ -409,4 +411,24 @@
 
         gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray('.b-up').forEach(elem => { gsap.fromTo(elem, { y: 60, opacity: 0 }, { scrollTrigger: { trigger: elem, start: "top 90%", toggleActions: "play none none none" }, y: 0, opacity: 1, duration: 1.2, ease: "bounce.out" }); });
-        gsap.utils.toArray('.grid-4, .grid-3, .grid-2').forEach(grid => { gsap.fromTo(grid.querySelectorAll('.b-card'), {
+        gsap.utils.toArray('.grid-4, .grid-3, .grid-2').forEach(grid => { gsap.fromTo(grid.querySelectorAll('.b-card'), { y: 50, opacity: 0 }, { scrollTrigger: { trigger: grid, start: "top 85%" }, y: 0, opacity: 1, duration: 1, ease: "back.out(1.7)", stagger: 0.2 }); });
+        gsap.to('.bounce-infinite', { y: -10, duration: 1.5, repeat: -1, yoyo: true, ease: "power1.inOut" });
+
+        // 3D Background
+        const canvas = document.getElementById('canvas-bg');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        const geometry = new THREE.TorusGeometry(12, 4, 16, 100);
+        const material = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.15 });
+        const torus = new THREE.Mesh(geometry, material);
+        scene.add(torus);
+        camera.position.z = 30;
+        let mouseX = 0; let mouseY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = (e.clientX - window.innerWidth / 2) * 0.001; mouseY = (e.clientY - window.innerHeight / 2) * 0.001; });
+        const animate = () => { requestAnimationFrame(animate); torus.rotation.x += 0.005; torus.rotation.y += 0.002; torus.rotation.y += (mouseX - torus.rotation.y) * 0.05; torus.rotation.x += (mouseY - torus.rotation.x) * 0.05; renderer.render(scene, camera); };
+        animate();
+    </script>
+</body>
+</html>

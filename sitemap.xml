@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
     <loc>https://www.jmdsolarpower.com/</loc>
     <changefreq>weekly</changefreq>
@@ -10,6 +11,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.jmdsolarpower.com/blog/is-solar-worth-it-2026.html</loc>
     <changefreq>monthly</changefreq>
@@ -35,4 +37,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.jmdsolarpower.com/blog/solar-panel-maintenance-noida-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.jmdsolarpower.com/blog/commercial-solar-benefits-india-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
